@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/hapshuta/static/css/main.11e744c0.css",
-    "main.js": "/hapshuta/static/js/main.a18ef736.js",
-    "static/media/header.jpg": "/hapshuta/static/media/header.b2d9a6d8fc7c3e63b9ae.jpg",
-    "index.html": "/hapshuta/index.html",
-    "main.11e744c0.css.map": "/hapshuta/static/css/main.11e744c0.css.map",
-    "main.a18ef736.js.map": "/hapshuta/static/js/main.a18ef736.js.map"
+    "main.css": "/static/css/main.11e744c0.css",
+    "main.js": "/static/js/main.1b4dfc4c.js",
+    "static/media/header.jpg": "/static/media/header.b2d9a6d8fc7c3e63b9ae.jpg",
+    "index.html": "/index.html",
+    "main.11e744c0.css.map": "/static/css/main.11e744c0.css.map",
+    "main.1b4dfc4c.js.map": "/static/js/main.1b4dfc4c.js.map"
   },
   "entrypoints": [
     "static/css/main.11e744c0.css",
-    "static/js/main.a18ef736.js"
+    "static/js/main.1b4dfc4c.js"
   ]
 }
