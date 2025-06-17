@@ -10,6 +10,7 @@
   --accent-light:   #eef2f7;
   --accent-dark:    #d3e0ea;
   --purple-dark:    #4b0082;
+  --purple-light:   #7a49a1;
   --font-heading:   'Playfair Display', serif;
   --font-body:      'Montserrat', sans-serif;
 }
@@ -41,7 +42,7 @@ html, body {
 
 /* 5. Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, var(--accent-light), var(--accent-dark));
+  background: #F7EFE4;
   padding: 4rem 1rem;
 }
 .main-title {
@@ -53,7 +54,7 @@ html, body {
   line-height: 1.2;
 }
 
-/* 6. תמונה ראשית (קטנה יותר) */
+/* 6. תמונה ראשית */
 .main-image {
   max-width: 600px;
   width: 100%;
@@ -76,24 +77,19 @@ html, body {
   margin-bottom: 3rem;
 }
 .btn-instagram {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 160px;
-  padding: 0.75rem 1rem;
-  border-radius: 50px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #f09433, #e6683c, #dc2743);
-  color: #fff;
-  font-weight: 600;
   border: none;
-  gap: 0.5rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .btn-instagram svg {
-  font-size: 1.25rem;
+  color: #fff;
+  font-size: 1.5rem;
 }
 .btn-instagram:hover {
-  transform: translateY(-3px);
+  transform: scale(1.1);
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
@@ -107,12 +103,12 @@ html, body {
   border-radius: 3px;
 }
 
-/* 9. Podcast Section – סגנון צבע עדין */
+/* 9. Podcast Section */
 .podcast-section {
   background: linear-gradient(135deg, #f3eafc, #e8d7f3);
   padding: 3rem 1rem;
   border-radius: 16px;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem;    
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 .sub-title {
@@ -122,92 +118,147 @@ html, body {
   color: var(--purple-dark);
 }
 
-/* 10. כפתורי פלטפורמות – מותאמים אישית */
-
-/* Spotify – רחב pill עם אייקון וטקסט */
-.btn-spotify {
+/* 10. כפתורי פלטפורמות */
+.social-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 180px;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: none;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+.social-btn:hover,
+.social-btn:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+.btn-spotify {
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   background: #1DB954;
   color: #fff;
-  font-weight: 600;
-  gap: 0.5rem;
-  border: none;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
-.btn-spotify svg {
-  font-size: 1.25rem;
-}
-.btn-spotify:hover {
-  background: #17a44b;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-}
-
-/* Apple – pill מינימלי עם רקע לבן ובורדר */
 .btn-apple {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 160px;
-  padding: 0.75rem 1.25rem;
-  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
   background: #fff;
   color: #A2AAAD;
   border: 2px solid #A2AAAD;
-  font-weight: 600;
-  gap: 0.5rem;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
-.btn-apple svg {
-  font-size: 1.25rem;
+
+/* 11. Live Event Section */
+.live-section {
+  background: #F7EFE4;
+  padding: -1rem 1rem;
+  margin-top: -1rem;        
 }
-.btn-apple:hover {
-  background: #f2f2f2;
+.live-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: #333333;
+  margin-bottom: 2rem;
+  background: #333333;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+/* Live Event Section – הפוך סדר העמודות + ריווח */
+.live-panel {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;    
+  justify-content: space-between; /* מפזר בריווח בין כל פריט */
+  align-items: center;
+  gap: 2rem;                      /* ריווח אחיד בין כל חלק */
+  background: #252525;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 0 auto 2rem;
+  max-width: 1200px;
+}
+
+/* התאמות מובייל: גורם לפריטים לעמוד אחד מתחת לשני */
+@media (max-width: 576px) {
+  .live-panel {
+    flex-direction: column; 
+    text-align: center;
+    gap: 1rem;
+  }
+  .live-info-item,
+  .live-img,
+  .ticket-btn {
+    width: 100% !important;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+.ticket-btn {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+.ticket-btn:hover {
+  background: #fff;
+  color: #000;
   transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+.live-img {
+  max-width: 250px;
+  width: 100%;
+  border-radius: 8px;
+}
+.live-info-item {
+  color: #fff;
+  margin: 0.5rem 1rem;
+  text-align: center;
+}
+.live-info-item strong {
+  display: block;
+  font-size: 1.2rem;
+}
+.live-info-item small {
+  color: #ccc;
 }
 
-/* נגישות – focus */
-.social-btn:focus-visible {
-  outline: 3px solid rgba(100,100,100,0.5);
-  outline-offset: 2px;
-}
-
-/* 11. YouTube Embed – גודל מקורי */
+/* 12. YouTube Embed */
 .youtube-container {
   width: 100%;
-  max-width: none;
   margin: 2rem auto;
 }
 .youtube-container iframe {
   width: 100%;
-  /* aspect-ratio ישאיר גובה מקורי ל-16:9 */
   aspect-ratio: 16 / 9;
   border: none;
   border-radius: 12px;
   box-shadow: 0 6px 24px rgba(0,0,0,0.1);
 }
 
-/* 12. Footer */
+/* 13. Footer */
 .footer-section {
   padding: 2rem 1rem;
   font-size: 0.9rem;
   color: #555;
 }
 
-/* 13. התאמות רספונסיביות */
+/* 14. רספונסיביות */
 @media (max-width: 992px) {
-  .main-title        { font-size: 3rem; }
-  .sub-title         { font-size: 2rem; }
+  .main-title    { font-size: 3rem; }
+  .sub-title     { font-size: 2rem; }
 }
 @media (max-width: 576px) {
-  .main-title        { font-size: 2.5rem; }
-  .sub-title         { font-size: 1.75rem; }
+  .main-title    { font-size: 2.5rem; }
+  .sub-title     { font-size: 1.75rem; }
   .btn-spotify,
-  .btn-apple        { width: 100%; max-width: 320px; }
+  .btn-apple,
+  .ticket-btn    { width: 100%; max-width: 320px; }
+  .live-panel    { flex-direction: column; }
 }
