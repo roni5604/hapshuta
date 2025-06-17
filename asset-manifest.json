@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/hapshuta/static/css/main.11e744c0.css",
-    "main.js": "/hapshuta/static/js/main.ea33ccc8.js",
+    "main.js": "/hapshuta/static/js/main.a18ef736.js",
+    "static/media/header.jpg": "/hapshuta/static/media/header.b2d9a6d8fc7c3e63b9ae.jpg",
     "index.html": "/hapshuta/index.html",
     "main.11e744c0.css.map": "/hapshuta/static/css/main.11e744c0.css.map",
-    "main.ea33ccc8.js.map": "/hapshuta/static/js/main.ea33ccc8.js.map"
+    "main.a18ef736.js.map": "/hapshuta/static/js/main.a18ef736.js.map"
   },
   "entrypoints": [
     "static/css/main.11e744c0.css",
-    "static/js/main.ea33ccc8.js"
+    "static/js/main.a18ef736.js"
   ]
 }
