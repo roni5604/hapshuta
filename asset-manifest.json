@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hapshuta/static/css/main.11e744c0.css",
+    "main.js": "/hapshuta/static/js/main.ea33ccc8.js",
+    "index.html": "/hapshuta/index.html",
+    "main.11e744c0.css.map": "/hapshuta/static/css/main.11e744c0.css.map",
+    "main.ea33ccc8.js.map": "/hapshuta/static/js/main.ea33ccc8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.11e744c0.css",
+    "static/js/main.ea33ccc8.js"
+  ]
+}
