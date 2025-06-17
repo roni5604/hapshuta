@@ -1,38 +1,163 @@
-.App {
+:root {
+  --bg: #f4f4f7;
+  --text: #1c1e21;
+  --purple: #6f42c1;
+}
+
+/* גוף הדף */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* מיכל ראשי */
+.app-container {
   text-align: center;
+  padding: 40px 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* כותרת ראשית ותת־כותרת */
+.main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--purple);
+}
+.sub-title {
+  font-size: 1.75rem;
+  margin: 30px 0 20px;
+  color: var(--text);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* תמונה ראשית */
+.main-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s, filter 0.3s;
+}
+.main-image:hover {
+  transform: scale(1.03) rotate(1deg);
+  filter: brightness(1.1) saturate(1.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* מיכל כפתורים */
+.links-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* כפתורי פרימיום */
+.social-btn {
+  position: relative;
+  overflow: hidden;
+  min-width: 220px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+.social-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  transform: rotate(30deg);
+  transition: transform 0.7s;
+}
+.social-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.social-btn:hover::before {
+  transform: rotate(60deg) translate(20%,20%);
 }
 
-.App-link {
-  color: #61dafb;
+/* גרדיאנטים מותאמים לפי מותג */
+.btn-instagram {
+  background: #E1306C;
+}
+.btn-instagram::before {
+  background: radial-gradient(circle at 30% 30%, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-spotify {
+  background: #1DB954;
+}
+.btn-spotify::before {
+  background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
+}
+
+.btn-apple {
+  background: #A2AAAD;
+}
+.btn-apple::before {
+  background: linear-gradient(135deg, #A2AAAD 0%, #687077 100%);
+}
+
+/* אייקון בתוך הכפתור */
+.social-btn svg {
+  margin-right: 12px;
+  font-size: 1.5rem;
+  z-index: 1;
+}
+
+/* Footer */
+.footer-section {
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: #555;
+}
+/* כפתורים עגולים עם רקע מותגי */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+}
+
+/* אפקט צל ועולה במתיחה */
+.social-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* צבעי מותג */
+.btn-instagram {
+  background: #E1306C;
+  color: #fff;
+}
+.btn-spotify {
+  background: #1DB954;
+  color: #fff;
+}
+.btn-apple {
+  background: #A2AAAD;
+  color: #fff;
+}
+/* הוספת ריווח מתחת לכפתור האינסטגרם כדי להפריד */
+.links-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px; /* הפרדה */
 }
