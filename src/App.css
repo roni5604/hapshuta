@@ -1,163 +1,213 @@
+/* src/App.css */
+
+/* 1. ייבוא גופנים */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* 2. משתנים גלובליים */
 :root {
-  --bg: #f4f4f7;
-  --text: #1c1e21;
-  --purple: #6f42c1;
+  --bg-light:       #f7f8fa;
+  --text-dark:      #2a2a2a;
+  --accent-light:   #eef2f7;
+  --accent-dark:    #d3e0ea;
+  --purple-dark:    #4b0082;
+  --font-heading:   'Playfair Display', serif;
+  --font-body:      'Montserrat', sans-serif;
 }
 
-/* גוף הדף */
-body {
+/* 3. Reset בסיסי */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  width: 100%;
+  font-family: var(--font-body);
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-/* מיכל ראשי */
+/* 4. מיכל ראשי ברוחב מלא */
 .app-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 2rem 1rem;
   text-align: center;
-  padding: 40px 20px;
 }
 
-/* כותרת ראשית ותת־כותרת */
+/* 5. Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent-dark));
+  padding: 4rem 1rem;
+}
 .main-title {
-  font-size: 3rem;
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
   font-weight: 700;
-  margin-bottom: 20px;
-  color: var(--purple);
-}
-.sub-title {
-  font-size: 1.75rem;
-  margin: 30px 0 20px;
-  color: var(--text);
+  margin-bottom: 1.5rem;
+  color: var(--purple-dark);
+  line-height: 1.2;
 }
 
-/* תמונה ראשית */
+/* 6. תמונה ראשית (קטנה יותר) */
 .main-image {
-  max-width: 100%;
+  max-width: 600px;
+  width: 100%;
   height: auto;
-  border-radius: 8px;
-  transition: transform 0.3s, filter 0.3s;
+  margin: 0 auto 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 .main-image:hover {
-  transform: scale(1.03) rotate(1deg);
-  filter: brightness(1.1) saturate(1.1);
+  transform: scale(1.03) rotate(0.3deg);
+  filter: brightness(1.05);
 }
 
-/* מיכל כפתורים */
+/* 7. Instagram Button */
 .links-container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 16px;
+  gap: 1rem;
+  margin-bottom: 3rem;
 }
-
-/* כפתורי פרימיום */
-.social-btn {
-  position: relative;
-  overflow: hidden;
-  min-width: 220px;
-  padding: 14px 24px;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
+.btn-instagram {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-decoration: none;
+  width: 160px;
+  padding: 0.75rem 1rem;
+  border-radius: 50px;
+  background: radial-gradient(circle at 30% 30%, #f09433, #e6683c, #dc2743);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.social-btn::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  transform: rotate(30deg);
-  transition: transform 0.7s;
+.btn-instagram svg {
+  font-size: 1.25rem;
 }
-.social-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-.social-btn:hover::before {
-  transform: rotate(60deg) translate(20%,20%);
+.btn-instagram:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
-/* גרדיאנטים מותאמים לפי מותג */
-.btn-instagram {
-  background: #E1306C;
-}
-.btn-instagram::before {
-  background: radial-gradient(circle at 30% 30%, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+/* 8. קו מפריד עדין */
+.section-separator {
+  width: 80%;
+  max-width: 600px;
+  height: 6px;
+  margin: -2rem auto 2rem;
+  background: #c0c7d6;
+  border-radius: 3px;
 }
 
+/* 9. Podcast Section – סגנון צבע עדין */
+.podcast-section {
+  background: linear-gradient(135deg, #f3eafc, #e8d7f3);
+  padding: 3rem 1rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.sub-title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--purple-dark);
+}
+
+/* 10. כפתורי פלטפורמות – מותאמים אישית */
+
+/* Spotify – רחב pill עם אייקון וטקסט */
 .btn-spotify {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
   background: #1DB954;
+  color: #fff;
+  font-weight: 600;
+  gap: 0.5rem;
+  border: none;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
-.btn-spotify::before {
-  background: linear-gradient(135deg, #1DB954 0%, #1ed760 100%);
+.btn-spotify svg {
+  font-size: 1.25rem;
+}
+.btn-spotify:hover {
+  background: #17a44b;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
+/* Apple – pill מינימלי עם רקע לבן ובורדר */
 .btn-apple {
-  background: #A2AAAD;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  background: #fff;
+  color: #A2AAAD;
+  border: 2px solid #A2AAAD;
+  font-weight: 600;
+  gap: 0.5rem;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
-.btn-apple::before {
-  background: linear-gradient(135deg, #A2AAAD 0%, #687077 100%);
+.btn-apple svg {
+  font-size: 1.25rem;
+}
+.btn-apple:hover {
+  background: #f2f2f2;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
-/* אייקון בתוך הכפתור */
-.social-btn svg {
-  margin-right: 12px;
-  font-size: 1.5rem;
-  z-index: 1;
+/* נגישות – focus */
+.social-btn:focus-visible {
+  outline: 3px solid rgba(100,100,100,0.5);
+  outline-offset: 2px;
 }
 
-/* Footer */
+/* 11. YouTube Embed – גודל מקורי */
+.youtube-container {
+  width: 100%;
+  max-width: none;
+  margin: 2rem auto;
+}
+.youtube-container iframe {
+  width: 100%;
+  /* aspect-ratio ישאיר גובה מקורי ל-16:9 */
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+}
+
+/* 12. Footer */
 .footer-section {
-  margin-top: 60px;
+  padding: 2rem 1rem;
   font-size: 0.9rem;
   color: #555;
 }
-/* כפתורים עגולים עם רקע מותגי */
-.social-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  margin: 10px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: none;
-}
 
-/* אפקט צל ועולה במתיחה */
-.social-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+/* 13. התאמות רספונסיביות */
+@media (max-width: 992px) {
+  .main-title        { font-size: 3rem; }
+  .sub-title         { font-size: 2rem; }
 }
-
-/* צבעי מותג */
-.btn-instagram {
-  background: #E1306C;
-  color: #fff;
-}
-.btn-spotify {
-  background: #1DB954;
-  color: #fff;
-}
-.btn-apple {
-  background: #A2AAAD;
-  color: #fff;
-}
-/* הוספת ריווח מתחת לכפתור האינסטגרם כדי להפריד */
-.links-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px; /* הפרדה */
+@media (max-width: 576px) {
+  .main-title        { font-size: 2.5rem; }
+  .sub-title         { font-size: 1.75rem; }
+  .btn-spotify,
+  .btn-apple        { width: 100%; max-width: 320px; }
 }

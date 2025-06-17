@@ -2,7 +2,7 @@
   "name": "hapshuta-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://roni5604.github.io/hapshuta",
+  "homepage": "https://hapshuta.com",
   "dependencies": {
     "bootstrap": "^5.3.6",
     "react": "^18.2.0",
